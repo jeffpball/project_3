@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require("cors")
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
@@ -8,6 +9,12 @@ const app = express();
 
 // Bodyparser Middleware
 app.use(bodyParser.json());
+app.use(cors());
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+)
 
 // DB Config 
 const db = require('./config/keys').mongoURI;
@@ -17,6 +24,10 @@ mongoose
     .connect(db)
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
+
+var Users = require('./routes/Users')
+app.use('/users', Users)
+
 
 // Use Routes
 app.use('/api/items', items);
