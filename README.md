@@ -1,0 +1,3 @@
+## edgeTicket: Getting the edge on ticket prices
+
+An aggregator site for second hand concert ticket sales. Currently many sites exist for selling concert tickets, however there is no centralized resource for determining the value of tickets across platforms. Our goal is to create an easy to navigate resource that pulls tickets from multiple sellers, helping the user find the lowest ticket prices (preliminarily SeatGeek, StubHub, Ticketmaster).
