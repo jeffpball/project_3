@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "service": "TicketMaster",
+    "image":
+      "https://www.digitalmusicnews.com/wp-content/uploads/2019/04/ticketmaster.png",
+    "price": "$50.00",
+    "link": "https://www.ticketmaster.com/"
+  },
+  {
+    "id": 2,
+    "service": "Mr. Krabs",
+    "image":
+      "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131",
+    "price": "Restaurant Owner",
+    "link": "A Giant Anchor"
+  },
+  {
+    "id": 3,
+    "service": "Squidward",
+    "image":
+      "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626",
+    "price": "Cashier",
+    "link": "An Easter Island Head"
+  }
+]

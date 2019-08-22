@@ -42,6 +42,8 @@ import Landing from './components/Landing'
 import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
+import Card from './components/Card'
+import tickets from "./tickets.json";
 
 class App extends Component {
   render() {
@@ -56,7 +58,14 @@ class App extends Component {
             <Route exact path="/profile" component={Profile} />
           </div>
         </div>
+        <Card
+        service={tickets[0].service}
+        image={tickets[0].image}
+        price={tickets[0].price}
+        link={tickets[0].link}
+        />
       </Router>
+      
     )
   }
 }
