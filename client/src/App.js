@@ -1,34 +1,64 @@
-import React, { Component } from 'react';
-import AppNavbar from './components/AppNavbar';
-import ShoppingList from './components/ShoppingList';
-import ItemModal from './components/ItemModal';
-import { Container } from 'reactstrap';
+// import React, { Component } from 'react';
+// import AppNavbar from './components/AppNavbar';
+// import ShoppingList from './components/ShoppingList';
+// import ItemModal from './components/ItemModal';
+// import { Container } from 'reactstrap';
 
-import { Provider } from 'react-redux';
-import store from './store';
-import { loadUser } from './actions/authActions';
+// import { Provider } from 'react-redux';
+// import store from './store';
+// import { loadUser } from './actions/authActions';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.css';
+
+// class App extends Component {
+//   componentDidMount() {
+//     store.dispatch(loadUser());
+//   }
+
+//   render() {
+//     return (
+//       <Provider store={store}>
+//         <div className='App'>
+//           <AppNavbar />
+//           <Container>
+//             <ItemModal />
+//             <ShoppingList />
+//           </Container>
+//         </div>
+//       </Provider>
+//     );
+//   }
+// }
+
+// export default App;
+
+
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import Navbar from './components/Navbar'
+import Landing from './components/Landing'
+import Login from './components/Login'
+import Register from './components/Register'
+import Profile from './components/Profile'
 
 class App extends Component {
-  componentDidMount() {
-    store.dispatch(loadUser());
-  }
-
   render() {
     return (
-      <Provider store={store}>
-        <div className='App'>
-          <AppNavbar />
-          <Container>
-            <ItemModal />
-            <ShoppingList />
-          </Container>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Route exact path="/" component={Landing} />
+          <div className="container">
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
+          </div>
         </div>
-      </Provider>
-    );
+      </Router>
+    )
   }
 }
 
-export default App;
+export default App
