@@ -27,6 +27,7 @@ if (process.env.JAWSDB_URL) {
   })
 }
 
+connection.connect();
 // MongoDB Config
 
 // const db = config.get('mongoURI');
