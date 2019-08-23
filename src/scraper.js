@@ -15,63 +15,73 @@ class Scraper {
         return URL;
     }
 
-    async getPerformerID(url) {
-        let response = await axios.get(url);
-        const $ = await cheerio.load(response.data);
-        //  $(".PhotoBackground__HiddenImage-sc-192awij-3").each(function(i, element) {
-        //         const string = element['attribs']['src'];
-        //         console.log(string);
-        //         console.log("this is working");
-        //         return string;
-        //     });
-        const scrape = await $(".PhotoBackground__HiddenImage-sc-192awij-3");
-        
-        return scrape;
-            
+    async getPerformer(url) {
+        return new Promise((resolve, reject) => {
+            axios.get(url).then(function(response){
+                const $ = cheerio.load(response.data);
+                $(".PhotoBackground__HiddenImage-sc-192awij-3").each(function (i, element) {
+                    const string = element['attribs']['src'];
+                    resolve(string);
+                })
+            }).catch((err) => {
+                // TODO: add error handling for catching errors
+                // look for 400 error? performer not found?  provide error message so user or component knows what to do
+                // look for 500 error? server down?
+                reject(err);
+            });
+        });    
     }
 
-    // async getPerformerID(url) {
-    //     await axios.get(url).then(function (response) {
-    //         const stringArray = [];
-    //         const $ = cheerio.load(response.data);
-    //         $(".PhotoBackground__HiddenImage-sc-192awij-3").each(function(i, element) {
-    //             const string = element['attribs']['src'];
-    //             return string;
-    //         });
-    //     })
-    // }
+    parsePerfID(source, name) {
+        const regexOne = /1200x525.jpg/
+        const upperBound = regexOne.exec(source).index - 1;
+        const regexTwo = /landscape/
+        const lowerBound = regexTwo.exec(source).index + 18 + name.length;
+        const peformerId = source.slice(lowerBound, upperBound);
+        console.log("performer id is " + peformerId);
+        return peformerId;
+    }
 
-    // async scrape(artist) {
-    //     const name = await this.nameConverter(artist);
-    //     // console.log(name);
-    //     const website = await this.getWebsiteURL(name);
-    //     const response = await axios.get(website);
-    //     const $ = await cheerio.load(response.data);
-    //      $(".PhotoBackground__HiddenImage-sc-192awij-3").each(function(i, element) {
-    //             const string = element['attribs']['src'];
-    //             console.log(string);
-    //             console.log("this is working");
-    //             return string;
-    //         });
-        // console.log(website);
-        // const string = await this.getPerformerID(website);
-        // console.log(string);
-        // return string;
-    // }
+    /**
+     * TODO: Write something here 
+     * @param {String} name - name of the performer to search for
+     */
+    async scrape(name) {
+        return new Promise((resolve, reject) => {
+            const performerName = this.nameConverter(name);
+            const url = this.getWebsiteURL(performerName);
+            this.getPerformer(url)
+                .then((performer) => {
+                    console.log("scrape: performer " + performer);
+                    const peformerId = this.parsePerfID(performer, performerName);            
+                    console.log("scrape: performer id is " + peformerId);
+                    resolve(peformerId);
+            })  .catch((err) => {
+                    // TODO: handle error here... how to tell calling code what to do
+                    reject(err);
+            });
+        })
+    }
 }
 
+// module.exports = Scraper;
 const seatGeek = new Scraper();
 
-const scrape = async (artist) => {
-    const name = await seatGeek.nameConverter(artist);
-    console.log("name is " + name);
-    const website = await seatGeek.getWebsiteURL(name);
-    console.log("website is " + website);
-    const string = await seatGeek.getPerformerID(website);
-    console.log("string is " + string);
-};
+seatGeek.scrape("tyler the creator").then((perfID) => 
+    console.log("x is " + perfID)
+);
 
-console.log(scrape("Tyler-The-Creator"));
+
+// const scrape = async (artist) => {
+//     const name = seatGeek.nameConverter(artist);
+//     console.log("name is " + name);
+//     const website = seatGeek.getWebsiteURL(name);
+//     console.log("website is " + website);
+//     const string = await seatGeek.getPerformerID(website);
+//     console.log("string is " + string);
+// };
+
+// console.log(scrape("Tyler-The-Creator"));
 
 // const artistString = seatGeek.scrape("Tyler the Creator");
 // console.log(artistString);
@@ -80,7 +90,7 @@ console.log(scrape("Tyler-The-Creator"));
 
 
 
-
+// TODO: Look at string.split("/");
 // const string = "https://seatgeek.com/images/performers-landscape/tyler-the-creator-5e876c/13719/1200x525.jpg";
 // const name = "tyler-the-creator";
 // const regexOne = /1200x525.jpg/
@@ -89,6 +99,9 @@ console.log(scrape("Tyler-The-Creator"));
 // const lowerBound = regexTwo.exec(string).index + 18 + name.length;
 // const peformerId = string.slice(lowerBound, upperBound);
 // console.log("performer id is " + peformerId);
+
+
+    
 
 
 
