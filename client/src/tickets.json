@@ -9,18 +9,18 @@
   },
   {
     "id": 2,
-    "service": "Mr. Krabs",
+    "service": "StubHub",
     "image":
-      "https://vignette3.wikia.nocookie.net/vsbattles/images/8/80/Mr._Krabs.png/revision/latest?cb=20150919162131",
-    "price": "Restaurant Owner",
-    "link": "A Giant Anchor"
+      "https://i2.wp.com/stubhubpressbox.com/wp-content/uploads/2018/08/cropped-StubHub-Logo-Indigo.png",
+    "price": "$70.00",
+    "link": "https://www.stubhub.com"
   },
   {
     "id": 3,
-    "service": "Squidward",
+    "service": "SeatGeek",
     "image":
-      "https://vignette2.wikia.nocookie.net/fictionalcharacters/images/a/ac/Squidward.png/revision/latest?cb=20131121012626",
-    "price": "Cashier",
-    "link": "An Easter Island Head"
+      "https://searchlogovector.com/wp-content/uploads/2018/09/seatgeek-logo-vector.png",
+    "price": "$100.00",
+    "link": "https://seatgeek.com"
   }
 ]

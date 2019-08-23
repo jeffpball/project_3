@@ -43,7 +43,11 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
 import Card from './components/Card'
-import tickets from "./tickets.json";
+import tickets from "./tickets.json"
+import Form from "./components/Form"
+import './App.css'
+import Wrapper from "./components/Wrapper"
+
 
 class App extends Component {
   render() {
@@ -58,14 +62,36 @@ class App extends Component {
             <Route exact path="/profile" component={Profile} />
           </div>
         </div>
-        <Card
-        service={tickets[0].service}
-        image={tickets[0].image}
-        price={tickets[0].price}
-        link={tickets[0].link}
-        />
+        <div>
+          <Form />
+        </div>
+        <br></br>
+        <br></br>
+        <Wrapper>
+          <div>
+            <Card
+              service={tickets[0].service}
+              image={tickets[0].image}
+              price={tickets[0].price}
+              link={tickets[0].link}
+            />
+            <Card
+              service={tickets[1].service}
+              image={tickets[1].image}
+              price={tickets[1].price}
+              link={tickets[1].link}
+            />
+            <Card
+              service={tickets[2].service}
+              image={tickets[2].image}
+              price={tickets[2].price}
+              link={tickets[2].link}
+            />
+          </div>
+          
+        </Wrapper>
       </Router>
-      
+
     )
   }
 }
