@@ -1,7 +1,7 @@
 {
-  "name": "mern_shopping_list",
+  "name": "edgeTicket",
   "version": "1.0.0",
-  "description": "Shopping list built with the MERN stack",
+  "description": "Web scraper lowest tickets",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -11,7 +11,7 @@
     "dev": "nodemon server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Brad Traversy",
+  "author": "Gavin, Nick, Jeff, Nate",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^3.0.6",
