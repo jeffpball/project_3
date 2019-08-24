@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "service": "TicketMaster",
+    "image":
+      "https://www.digitalmusicnews.com/wp-content/uploads/2019/04/ticketmaster.png",
+    "price": "$50.00",
+    "link": "https://www.ticketmaster.com/"
+  },
+  {
+    "id": 2,
+    "service": "StubHub",
+    "image":
+      "https://i2.wp.com/stubhubpressbox.com/wp-content/uploads/2018/08/cropped-StubHub-Logo-Indigo.png",
+    "price": "$70.00",
+    "link": "https://www.stubhub.com"
+  },
+  {
+    "id": 3,
+    "service": "SeatGeek",
+    "image":
+      "https://searchlogovector.com/wp-content/uploads/2018/09/seatgeek-logo-vector.png",
+    "price": "$100.00",
+    "link": "https://seatgeek.com"
+  }
+]
