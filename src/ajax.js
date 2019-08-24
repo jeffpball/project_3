@@ -7,6 +7,23 @@ class SeatGeekAPI extends Scraper {
     constructor() {
         super();
     }
+    async getEvents( name ) {
+        const performerID = await this.scrape(name);
+        axios.get(`https://api.seatgeek.com/2/events?performers.id=${performerID}&per_page=100&client_id=MTIwNzV8MTM2NTQ1MDQyMg`)
+        .then(function(response) {
+            const events = response.data.events;
+            const listOfCities = [];
+            for (let event in events) {
+                let cityInfo = {};
+                cityInfo.city = events[event].venue.display_location;
+                cityInfo.eventId = events[event].id;
+                listOfCities.push(cityInfo);
+            }
+            console.log(listOfCities);
+            return listOfCities;
+        })
+    }
+    //don't use this one. just a sample of the original non asynchronous function
     getEventId (performerID) {
         axios.get(`https://api.seatgeek.com/2/events?performers.id=${performerID}&per_page=3&client_id=MTIwNzV8MTM2NTQ1MDQyMg`)
             .then(function(response) {
@@ -24,29 +41,7 @@ class SeatGeekAPI extends Scraper {
                 }
             });
     }
-    // async aGetEventId (name) {
-    //     return new Promise((resolve, reject) => {
-    //         const performerID = await this.scrape(name);
-    //         axios.get(`https://api.seatgeek.com/2/events?performers.id=${performerID}&per_page=3&client_id=MTIwNzV8MTM2NTQ1MDQyMg`)
-    //         .then(function(response) {
-    //             const events = response.data.events;
-    //             for (let event in events) {
-    //                 let eventId = events[event].id;
-    //                 let eventVenue = events[event].venue.display_location;
-    //                 console.log("event = " + eventId);
-    //                 if (eventVenue === searchedFor) {
-    //                     console.log(eventId);
-    //                     resolve(eventId);
-    //                 } else {
-    //                     console.log("Sorry not in there");
-    //                 }
-    //             }
-    //         }).catch ((err) => {
-    //             reject(err);
-    //         })
-    //     })
-    // }
-    async aGetEventId (name) {
+    async asyncGetEventId (name) {
         const performerID = await this.scrape(name);
         axios.get(`https://api.seatgeek.com/2/events?performers.id=${performerID}&per_page=1000&client_id=MTIwNzV8MTM2NTQ1MDQyMg`)
         .then(function(response) {
@@ -73,7 +68,8 @@ class SeatGeekAPI extends Scraper {
 seatGeek = new SeatGeekAPI();
 
 // seatGeek.getEventId(13719);
-seatGeek.aGetEventId("tyler the creator");
+// seatGeek.asyncGetEventId("tyler the creator");
+seatGeek.getEvents("tyler the creator");
 // seatGeek.getLowPrice("tyler the creator");
 
 
