@@ -68,12 +68,13 @@ class SeatGeekAPI extends Scraper {
 seatGeek = new SeatGeekAPI();
 
 // seatGeek.getEventId(13719);
-// seatGeek.asyncGetEventId("tyler the creator");
-seatGeek.getEvents("tyler the creator");
+seatGeek.asyncGetEventId("tyler the creator");
+// seatGeek.getEvents("tyler the creator");
 // seatGeek.getLowPrice("tyler the creator");
 
 
 // seatGeek.scrape("post malone").then((perfID) => 
 //     console.log("x is " + perfID)
 // );
+module.exports = SeatGeekAPI;
 
