@@ -30,22 +30,6 @@ if (process.env.JAWSDB_URL) {
 connection.connect();
 // MongoDB Config
 
-// const db = config.get('mongoURI');
-
-// Connect to Mongo
-// mongoose
-//   .connect(db, { 
-//     useNewUrlParser: true,
-//     useCreateIndex: true
-//   }) // Adding new mongo url parser
-//   .then(() => console.log('MongoDB Connected...'))
-//   .catch(err => console.log(err));
-
-// Use Routes
-// app.use('/api/items', require('./routes/api/items'));
-// app.use('/api/users', require('./routes/api/users'));
-// app.use('/api/auth', require('./routes/api/auth'));
-
 const Users = require('./routes/Users')
 
 app.use('/users', Users)
