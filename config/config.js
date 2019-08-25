@@ -1,7 +1,7 @@
 module.exports = {
     "development": {
       "username": 'root',
-      "password": 'Oliver01$',
+      "password": '',
       "database": 'edgetickets_db',
       "host": 'localhost',
       "dialect": "mysql"

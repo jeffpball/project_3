@@ -22,7 +22,7 @@ if (process.env.JAWSDB_URL) {
   var connection = mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: 'Oliver01$',
+      password: '',
       database: 'edgetickets_db'
   })
 }
