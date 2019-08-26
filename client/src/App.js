@@ -38,15 +38,15 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
-import Landing from './components/Landing'
+import Landing from './components/Landing/Landing'
 import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
-import Card from './components/Card'
+import Card from './components/Card/Card'
 import tickets from "./tickets.json"
-import Form from "./components/Form"
+import Form from "./components/Form/Form"
 import './App.css'
-import Wrapper from "./components/Wrapper"
+import Wrapper from "./components/Wrapper/Wrapper"
 
 
 class App extends Component {
