@@ -11,6 +11,7 @@ class Landing extends Component {
   render() {
     const loginRegLink = (
       <ul className="navbar-nav">
+        
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             Login
@@ -41,6 +42,7 @@ class Landing extends Component {
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+        <img src={require('./edge1.jpg')} className="App-logo" alt="logo" />
           <button
             className="navbar-toggler"
             type="button"

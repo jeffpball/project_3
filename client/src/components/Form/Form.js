@@ -4,11 +4,11 @@ import "./form.css";
 function Form({ q, handleInputChange, handleFormSubmit }) {
   return (
     <div className="container">
-      <div className="row align-items-center">
+      <div className="row justify-content-center">
         <form className="form-inline">
           <div className="form-group">
             <label htmlFor="Query">
-              <strong>Search Artist</strong>
+              <strong className="strong1">Search Artist</strong>
             </label>
             <input
               className="form-control"
@@ -21,9 +21,18 @@ function Form({ q, handleInputChange, handleFormSubmit }) {
               required
             />
           </div>
+          <div>
+            <button
+              onClick={handleFormSubmit}
+              type="submit"
+              className="btn btn-lg btn-warning ml-3"
+            >
+              <strong className="strong2">Search</strong>
+            </button>
+          </div>
         </form>
       </div>
-    </div>
+    </div >
   );
 }
 
