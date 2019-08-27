@@ -1,5 +1,5 @@
 import React from 'react'
-import "./card.css";
+import "./style.css"
 
 function Card(props) {
   return (
@@ -16,8 +16,7 @@ function Card(props) {
             <strong>Price:</strong> {props.price}
           </li>
           <li>
-          <strong>Link:</strong> 
-          {props.link}
+          <strong>Link:</strong> {props.link}
           </li>
         </ul>
       </div>

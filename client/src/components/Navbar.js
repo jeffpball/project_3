@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import "./navbar.css";
 
 class Landing extends Component {
   logOut(e) {
@@ -41,8 +42,8 @@ class Landing extends Component {
     )
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
-        <img src={require('./edge1.jpg')} className="App-logo" alt="logo" />
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <img src={require('./edge2.jpg.gif')} className="App-logo" alt="logo" />
           <button
             className="navbar-toggler"
             type="button"

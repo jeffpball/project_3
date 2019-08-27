@@ -4,7 +4,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="container">
-        <div className="col-lg-12 mx-auto">
+        <div className="col-lg-8 mx-auto">
           <div>
             <img src={require('./edgeticketslogo.JPG')} alt="" height="100%" width="100%" />
           </div>
