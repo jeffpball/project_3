@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql');
 const path = require('path');
 const config = require('config');
+const routes = require("./routes");
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -28,11 +29,9 @@ if (process.env.JAWSDB_URL) {
 }
 
 connection.connect();
-// MongoDB Config
 
-const Users = require('./routes/Users')
-
-app.use('/users', Users)
+// Add routes, both API and view
+app.use(routes);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
