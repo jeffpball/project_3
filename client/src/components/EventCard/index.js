@@ -2,8 +2,6 @@ import React from 'react'
 import './style.css'
 import CardDeck from 'react-bootstrap/CardDeck'
 import Card from 'react-bootstrap/Card'
-import post from './postmalone.JPG'
-import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 
 function EventCard() {
