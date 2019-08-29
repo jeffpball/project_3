@@ -9,16 +9,16 @@ module.exports = db.sequelize.define(
         primaryKey: true,
         autoIncrement: true
       },
-      first_name: {
+      artist: {
         type: Sequelize.STRING
       },
-      last_name: {
+      location: {
         type: Sequelize.STRING
       },
-      email: {
+      venue: {
         type: Sequelize.STRING
       },
-      password: {
+      date: {
         type: Sequelize.STRING
       },
       created: {
