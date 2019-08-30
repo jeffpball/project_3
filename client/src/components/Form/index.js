@@ -20,16 +20,6 @@ function Form({ q, handleInputChange, handleFormSubmit }) {
               onChange={handleInputChange}
               required
             />
-            <input
-              className="form-control"
-              id="Title"
-              type="text"
-              value={q}
-              placeholder="Los Angeles"
-              name="q"
-              onChange={handleInputChange}
-              required
-            />
           </div>
           <div>
             <button
