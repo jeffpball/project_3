@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql');
 const path = require('path');
 const config = require('config');
-const routes = require("./routes");
+// const routes = require("./routes");
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -27,7 +27,7 @@ if (process.env.JAWSDB_URL) {
   var connection = mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '',
+      password: 'Oliver01$',
       database: 'edgetickets_db'
   })
 }
@@ -35,7 +35,7 @@ if (process.env.JAWSDB_URL) {
 connection.connect();
 
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

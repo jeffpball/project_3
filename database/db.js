@@ -18,3 +18,5 @@ db.sequelize = sequelize
 db.Sequelize = Sequelize
 
 module.exports = db
+
+// const sequelize = new Sequelize('database', 'username', 'password', 
