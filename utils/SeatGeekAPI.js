@@ -60,15 +60,31 @@ class SeatGeekAPI extends Scraper {
             return (err);
         })
     }
+    async asyncGetEventIdA (name) {
+        const performerID = await this.scrape(name);
+        const response = await axios.get(`https://api.seatgeek.com/2/events?performers.id=${performerID}&per_page=1000&client_id=MTIwNzV8MTM2NTQ1MDQyMg`);
+        const events = await response.data.events;
+        for (let event in events) {
+            let eventLowPrice = events[event].stats.lowest_sg_base_price_good_deals;
+            let eventId = events[event].id;
+            let eventVenue = events[event].venue.display_location;
+            if (eventVenue === searchedFor) {
+                return eventLowPrice;
+            } 
+        }
+        // return events;
+    }
 }
 
 
 seatGeek = new SeatGeekAPI();
 
 // seatGeek.getEventId(13719);
-seatGeek.asyncGetEventId("tyler the creator");
+// seatGeek.asyncGetEventId("tyler the creator");
 // seatGeek.getEvents("tyler the creator");
 // seatGeek.getLowPrice("tyler the creator");
+
+seatGeek.asyncGetEventIdA("tyler the creator").then(result => console.log(result));
 
 
 // seatGeek.scrape("post malone").then((perfID) => 
