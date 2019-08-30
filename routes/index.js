@@ -4,7 +4,7 @@ const seatGeekAPIRoute = require("./seatGeekAPI/SeatGeekAPI")
 // const stubHubAPIRoute = require("./stubHubAPI")
 // const ticketMasterAPIRoute = require("./ticketMasterAPI")
 // const info = require("./info/Info")
-const users = require("./users/Users")
+const users = require("./Users")
 
 // API Routes
 router.use("/seatGeekAPI", seatGeekAPIRoute);
