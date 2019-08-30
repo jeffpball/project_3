@@ -8,7 +8,7 @@ function Form({ q, handleInputChange, handleFormSubmit }) {
         <form className="form-inline">
           <div className="form-group">
             <label htmlFor="Query">
-              <strong className="strong1">Search Artist</strong>
+              <strong className="strong1">Search Artist and Location:</strong>
             </label>
             <input
               className="form-control"
@@ -16,6 +16,16 @@ function Form({ q, handleInputChange, handleFormSubmit }) {
               type="text"
               value={q}
               placeholder="Post Malone"
+              name="q"
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              className="form-control"
+              id="Title"
+              type="text"
+              value={q}
+              placeholder="Los Angeles"
               name="q"
               onChange={handleInputChange}
               required
