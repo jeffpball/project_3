@@ -72,7 +72,19 @@ class SeatGeekAPI extends Scraper {
                 return eventLowPrice;
             } 
         }
-        // return events;
+    }
+    async getPrices(name, city) {
+        const performerID = await this.scrape(name);
+        const response = await axios.get(`https://api.seatgeek.com/2/events?performers.id=${performerID}&per_page=1000&client_id=MTIwNzV8MTM2NTQ1MDQyMg`);
+        const events = await response.data.events;
+        for (let event in events) {
+            let eventPrices = {};
+            eventPrices.eventLowPrice = events[event].stats.lowest_sg_base_price_good_deals;
+            eventPrices.eventAveragePrice = events[event].stats.average_price;
+            eventPrices.eventHighPrice = events[event].stats.highest_price;
+            let eventVenue = events[event].venue.display_location;
+            if (eventVenue === city) return eventPrices;
+        }
     }
 }
 
