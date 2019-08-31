@@ -7,13 +7,9 @@ const routes = require("./routes");
 // const info = require("./info/Info")
 const users = require("./Users")
 
-// API Routes
-router.use("/", routes);
-// router.use("/seatGeekAPI", seatGeekAPIRoute);
-// router.use("/stubHubAPI", stubHubAPIRoute);
-// router.use("/ticketMasterAPI", ticketMasterAPIRoute);
-// router.use("/info", info);
-router.use("/users", users);
+// API Route
+router.use("/api", routes);
+
 
 // If no API routes are hit, send the React app
 router.use((req, res) =>
