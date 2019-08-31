@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql');
 const path = require('path');
 const config = require('config');
-const routes = require("./routes");
+// const routes = require("./routes");
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -15,6 +15,10 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extend: false }));
+
+const Users = require('./routes/Users')
+
+app.use('/users', Users)
 
 // MySQL DB Config
 if (process.env.JAWSDB_URL) {
@@ -31,7 +35,7 @@ if (process.env.JAWSDB_URL) {
 connection.connect();
 
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

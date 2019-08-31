@@ -5,7 +5,7 @@ const routes = require("./routes");
 // const stubHubAPIRoute = require("./stubHubAPI")
 // const ticketMasterAPIRoute = require("./ticketMasterAPI")
 // const info = require("./info/Info")
-
+const users = require("./Users")
 
 // API Route
 router.use("/api", routes);
