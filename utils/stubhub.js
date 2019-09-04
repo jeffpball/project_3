@@ -2,7 +2,8 @@ const axios = require("axios");
 const key = process.env.REACT_APP_StubHubKey;
 const config = {
     headers:{
-        Authorization: "Bearer etZJVJsu1azZUAPxGiDsn0fdwBHr",
+        Authorization: key,
+        //Authorization: "Bearer etZJVJsu1azZUAPxGiDsn0fdwBHr",
         Accept: "application/json"
     }
 }
@@ -21,8 +22,13 @@ class StubHubAPI {
                         eventsReal.push(events[i]);
                     }
                 }
-                console.log("in response" , eventsReal);
-                return (eventsReal);
+                let eventInfo  = {};
+                eventInfo.eventLowPrice = eventsReal[0].ticketInfo.minListPrice;
+                eventInfo.eventHighPrice = eventsReal[0].ticketInfo.maxListPrice;
+                eventInfo.venue = eventsReal[0].venue.name;
+                eventInfo.url = eventsReal[0].webURI;
+                console.log("in response" , eventInfo);
+                return (eventInfo);
             })
             .catch ((err) => {
                 console.log(err)
@@ -31,10 +37,10 @@ class StubHubAPI {
     }
 }
 
-module.exports = SeatGeekAPI;
+module.exports = StubHubAPI;
 
 //UNIT TEST
-const testCity = "Tacoma";
-const testArtist = "Post Malone"
-StubHub = new StubHubAPI();
-StubHub.getEvent(testArtist, testCity);
+// const testCity = "Tacoma";
+// const testArtist = "Post Malone"
+// StubHub = new StubHubAPI();
+// StubHub.getEvent(testArtist, testCity);
