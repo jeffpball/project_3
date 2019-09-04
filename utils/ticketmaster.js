@@ -17,6 +17,8 @@ class TicketMasterAPI {
     }
 }
 
+module.exports = SeatGeekAPI;
+
 // UNIT TEST
 // const testArtist = "Post Malone";
 // const testCity = "Tacoma"
