@@ -6,8 +6,8 @@ export default {
     return axios.get("/api/seatGeekAPI/SeatGeekAPI", { params: { q: "location:" + q } });
   },
   // Gets event locations from the SeatGeekAPI by typing an artist name into the arist search input field and clicking search 
-  getPriceSeatGeek: function(q) {
-    return axios.get("/api/seatGeekAPI/SeatGeekAPI", { params: { q: "price:" + q } });
+  getPriceSeatGeek: function(eventData) {
+    return axios.post("/api/seatgeek/search", eventData);
   },
   getPriceStubHub: function(q) {
     return axios.get("/api/stubHubAPI/StubHubAPI", { params: { q: "price:" + q } });
