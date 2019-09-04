@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql');
 const path = require('path');
 const config = require('config');
-// const routes = require("./routes");
+const routes = require("./routes");
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -18,7 +18,8 @@ app.use(bodyParser.urlencoded({ extend: false }));
 
 const Users = require('./routes/Users')
 
-app.use('/users', Users)
+app.use('/users', Users);
+app.use(routes);
 
 // MySQL DB Config
 if (process.env.JAWSDB_URL) {
@@ -27,7 +28,7 @@ if (process.env.JAWSDB_URL) {
   var connection = mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '',
+      password: 'bananas',
       database: 'edgetickets_db'
   })
 }

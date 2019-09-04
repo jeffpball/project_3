@@ -1,6 +1,6 @@
 const path = require("path");
 const router = require("express").Router();
-const routes = require("./routes");
+const apiRoutes = require("./routes");
 // const seatGeekAPIRoute = require("./seatGeekAPI/SeatGeekAPI")
 // const stubHubAPIRoute = require("./stubHubAPI")
 // const ticketMasterAPIRoute = require("./ticketMasterAPI")
@@ -8,8 +8,15 @@ const routes = require("./routes");
 const users = require("./Users")
 
 // API Route
-router.use("/api", routes);
-
+// router.use("/api", routes);
+// router.use("/users", users);
+// / API Routes
+router.use("/api", apiRoutes);
+// router.use("/seatGeekAPI", seatGeekAPIRoute);
+// router.use("/stubHubAPI", stubHubAPIRoute);
+// router.use("/ticketMasterAPI", ticketMasterAPIRoute);
+// router.use("/info", info);
+router.use("/users", users);
 
 // If no API routes are hit, send the React app
 router.use((req, res) =>
