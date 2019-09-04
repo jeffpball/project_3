@@ -31,6 +31,8 @@ class StubHubAPI {
     }
 }
 
+module.exports = SeatGeekAPI;
+
 //UNIT TEST
 const testCity = "Tacoma";
 const testArtist = "Post Malone"
