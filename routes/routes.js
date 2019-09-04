@@ -10,6 +10,8 @@ router.post("/seatgeek/search", function(req, res) {
     })
 });
 
+
+
 //Gavin, here are some boiler plate routes for the ticketmaster and stubhub API calls
 router.post("/ticketmaster/search", function(req, res) {
     seatGeekAPI.getPrices(req.body.name, req.body.city).then(function(response){
