@@ -18,7 +18,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extend: false }));
 
 app.use('/users', Users);
-app.use(routes);
+app.use('/routes', routes);
 
 // MySQL DB Config
 if (process.env.JAWSDB_URL) {

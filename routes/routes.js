@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const SeatGeekAPI = require("../utils/SeatGeekAPI");
 const seatGeekAPI = new SeatGeekAPI();
+const TicketMasterAPI = require("../utils/ticketmaster");
+const ticketMasterAPI = new TicketMasterAPI();
+const StubHubAPI = require("../utils/stubhub");
+const stubHubAPI = new StubHubAPI();
 
 router.post("/seatgeek/search", function(req, res) {
     seatGeekAPI.getPrices(req.body.name, req.body.city).then(function(response){
