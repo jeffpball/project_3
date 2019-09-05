@@ -9,7 +9,7 @@ function EventCard() {
         <Container>
         <CardDeck>
             <Card>
-            <Card.Img variant="top" src="https://static.seattletimes.com/wp-content/uploads/2018/04/173623-780x592.jpg" />
+            <Card.Img variant="top" src="https://www.coldharbourrecordings.com/wp-content/uploads/2014/07/EVENTSTOP2-940x470.jpg" />
                 <Card.Body>
                     <Card.Title>Venue</Card.Title>
                     <Card.Text>
@@ -45,7 +45,7 @@ function EventCard() {
                 </Card.Footer>
             </Card>
             <Card>
-                <Card.Img variant="top" src="http://www.simplesend.com/simple/uploadedimages/000397/SeattleKnow.jpg" />
+                <Card.Img variant="top" src="https://www.penpointefilms.com/wp-content/uploads/2019/02/ShowImage-940x470.jpg" />
                 <Card.Body>
                     <Card.Title>City</Card.Title>
                     <Card.Text>

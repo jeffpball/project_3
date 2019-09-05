@@ -13,7 +13,14 @@ function Card(props) {
             <strong>Service:</strong> {props.service}
           </li>
           <li>
+<<<<<<< HEAD
+            <strong>High Price:</strong> {props.highPrice}
+          </li>
+          <li>
+            <strong>Low Price:</strong> {props.lowPrice}
+=======
             <strong>Price:</strong> {props.price}
+>>>>>>> master
           </li>
           <li>
           <strong>Link:</strong> {props.link}

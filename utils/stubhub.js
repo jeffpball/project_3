@@ -1,9 +1,17 @@
 const axios = require("axios");
+<<<<<<< HEAD
+// const key = process.env.REACT_APP_StubHubKey;
+const config = {
+    headers:{
+        // Authorization: key,
+        Authorization: "Bearer etZJVJsu1azZUAPxGiDsn0fdwBHr",
+=======
 const key = process.env.REACT_APP_StubHubKey;
 const config = {
     headers:{
         Authorization: key,
         //Authorization: "Bearer etZJVJsu1azZUAPxGiDsn0fdwBHr",
+>>>>>>> master
         Accept: "application/json"
     }
 }

@@ -5,10 +5,17 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql');
 const path = require('path');
 const config = require('config');
+<<<<<<< HEAD
+const routes = require('./routes');
+const Users = require('./routes/Users')
+=======
 const routes = require("./routes");
 const port = process.env.PORT || 5000;
 
+>>>>>>> master
 const app = express();
+
+const port = process.env.PORT || 5000;
 
 // Bodyparser Middleware
 app.use(express.json());
@@ -16,7 +23,10 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extend: false }));
 
+<<<<<<< HEAD
+=======
 const Users = require('./routes/Users')
+>>>>>>> master
 
 app.use('/users', Users);
 app.use(routes);
@@ -28,7 +38,11 @@ if (process.env.JAWSDB_URL) {
   var connection = mysql.createConnection({
       host: 'localhost',
       user: 'root',
+<<<<<<< HEAD
+      password: '',
+=======
       password: 'bananas',
+>>>>>>> master
       database: 'edgetickets_db'
   })
 }

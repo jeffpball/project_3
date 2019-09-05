@@ -44,7 +44,9 @@ import Register from './components/Register'
 import Profile from './components/Profile'
 import Card from './components/Card'
 import tickets from "./tickets.json"
-import Form from "./components/Form"
+// import Form from "./components/Form"
+import Search from "./components/Form"
+import NameCity from "./components/NameCity"
 import './App.css'
 import Wrapper from './components/Wrapper'
 import EventCard from './components/EventCard'
@@ -64,31 +66,36 @@ class App extends Component {
           </div>
         </div>
         <div>
-          <Form />
-        </div>
-        <br></br>
-        <div>
-          <EventCard />
+          <Search />
         </div>
         <br></br>
         <Wrapper>
           <div>
+            <NameCity
+            
+            />
+          </div>
+          
+          <div>
             <Card
               service={tickets[0].service}
               image={tickets[0].image}
-              price={tickets[0].price}
+              lowPrice={tickets[0].lowPrice}
+              highPrice={tickets[0].highPrice}
               link={tickets[0].link}
             />
             <Card
               service={tickets[1].service}
               image={tickets[1].image}
-              price={tickets[1].price}
+              lowPrice={tickets[1].lowPrice}
+              highPrice={tickets[1].highPrice}
               link={tickets[1].link}
             />
             <Card
               service={tickets[2].service}
               image={tickets[2].image}
-              price={tickets[2].price}
+              lowPrice={tickets[2].lowPrice}
+              highPrice={tickets[2].highPrice}
               link={tickets[2].link}
             />
           </div>

@@ -1,11 +1,22 @@
 const axios = require("axios");
+<<<<<<< HEAD
+// const key = process.env.REACT_APP_TicketMasterKey;
+
+const key = "wotjY8jrJPSsHhtUmS3Gi1ySKBQdsG2E";
+
+=======
 const key = process.env.REACT_APP_TicketMasterKey;
 //const key = "wotjY8jrJPSsHhtUmS3Gi1ySKBQdsG2E";
+>>>>>>> master
 class TicketMasterAPI {
     constructor() {
     }
     getEvent(artist, city, key){
+<<<<<<< HEAD
+        axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=wotjY8jrJPSsHhtUmS3Gi1ySKBQdsG2E&city=${city}&keyword=${artist}`)
+=======
         axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=${key}&city=${city}&keyword=${artist}`)
+>>>>>>> master
             .then(function(response){
                 const events = response.data;
                 let eventInfo  = {};
