@@ -49,7 +49,7 @@ import Search from "./components/Form"
 import NameCity from "./components/NameCity"
 import './App.css'
 import Wrapper from './components/Wrapper'
-import EventCard from './components/EventCard'
+// import EventCard from './components/EventCard'
 
 
 class App extends Component {
