@@ -4,9 +4,9 @@ class Landing extends Component {
   render() {
     return (
       <div className="container">
-        <div className="jumbotron mt-5">
-          <div className="col-sm-8 mx-auto">
-            <h1 className="text-center">WELCOME</h1>
+        <div className="col-lg-8 mx-auto">
+          <div>
+            <img src={require('./edgeticketslogo.JPG')} alt="" height="100%" width="100%" />
           </div>
         </div>
       </div>

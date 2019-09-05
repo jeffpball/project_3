@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import "./navbar.css";
 
 class Landing extends Component {
   logOut(e) {
@@ -11,6 +12,7 @@ class Landing extends Component {
   render() {
     const loginRegLink = (
       <ul className="navbar-nav">
+        
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             Login
@@ -40,35 +42,36 @@ class Landing extends Component {
     )
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarsExample10"
-          aria-controls="navbarsExample10"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <img src={require('./edge2.jpg.gif')} className="App-logo" alt="logo" />
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExample10"
+            aria-controls="navbarsExample10"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
 
-        <div
-          className="collapse navbar-collapse justify-content-md-center"
-          id="navbarsExample10"
-        >
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Home
+          <div
+            className="collapse navbar-collapse justify-content-md-center"
+            id="navbarsExample10"
+          >
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to="/" className="nav-link">
+                  Home
               </Link>
-            </li>
-          </ul>
-          {localStorage.usertoken ? userLink : loginRegLink}
-        </div>
+              </li>
+            </ul>
+            {localStorage.usertoken ? userLink : loginRegLink}
+          </div>
       </nav>
-    )
-  }
-}
-
+        )
+      }
+    }
+    
 export default withRouter(Landing)

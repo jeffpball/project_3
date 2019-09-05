@@ -5,15 +5,21 @@ const bodyParser = require('body-parser')
 const mysql = require('mysql');
 const path = require('path');
 const config = require('config');
-const port = process.env.PORT || 5000;
-
+const routes = require('./routes');
+const Users = require('./routes/Users')
 const app = express();
+
+const port = process.env.PORT || 5000;
 
 // Bodyparser Middleware
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extend: false }));
+
+
+app.use('/users', Users);
+app.use(routes);
 
 // MySQL DB Config
 if (process.env.JAWSDB_URL) {
@@ -22,32 +28,15 @@ if (process.env.JAWSDB_URL) {
   var connection = mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: 'password',
+      password: '',
       database: 'edgetickets_db'
   })
 }
 
-// MongoDB Config
+connection.connect();
 
-// const db = config.get('mongoURI');
-
-// Connect to Mongo
-// mongoose
-//   .connect(db, { 
-//     useNewUrlParser: true,
-//     useCreateIndex: true
-//   }) // Adding new mongo url parser
-//   .then(() => console.log('MongoDB Connected...'))
-//   .catch(err => console.log(err));
-
-// Use Routes
-// app.use('/api/items', require('./routes/api/items'));
-// app.use('/api/users', require('./routes/api/users'));
-// app.use('/api/auth', require('./routes/api/auth'));
-
-const Users = require('./routes/Users')
-
-app.use('/users', Users)
+// Add routes, both API and view
+// app.use(routes);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

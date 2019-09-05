@@ -1,8 +1,7 @@
 {
-  "name": "mern_shopping_list",
-  "version": "1.0.0",
-  "description": "Shopping list built with the MERN stack",
-  "main": "server.js",
+  "name": "project_3",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
@@ -11,12 +10,14 @@
     "dev": "nodemon server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Brad Traversy",
+  "author": "Gavin, Nick, Jeff, Nate",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
     "concurrently": "^3.6.0",
     "config": "^3.0.1",
     "cors": "^2.8.5",
@@ -28,6 +29,6 @@
     "sequelize": "^5.16.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.19.1"
   }
 }

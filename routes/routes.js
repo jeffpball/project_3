@@ -1,0 +1,34 @@
+const router = require("express").Router();
+const SeatGeekAPI = require("../utils/SeatGeekAPI");
+const TicketMasterAPI = require("../utils/ticketmaster");
+const StubHubAPI = require("../utils/stubhub");
+const seatGeekAPI = new SeatGeekAPI();
+const ticketMasterAPI = new TicketMasterAPI();
+const stubHubAPI = new StubHubAPI();
+
+router.post("/seatgeek/search", function(req, res) {
+    seatGeekAPI.getPrices(req.body.name, req.body.city).then(function(response){
+        res.json(response);
+    }).catch(function(err){
+        console.log(err);
+    })
+});
+
+//Gavin, here are some boiler plate routes for the ticketmaster and stubhub API calls
+router.post("/ticketmaster/search", function(req, res) {
+    ticketMasterAPI.getEvent(req.body.name, req.body.city).then(function(response){
+        res.json(response);
+    }).catch(function(err){
+        console.log(err);
+    })
+});
+
+router.post("/stubhub/search", function(req, res) {
+    stubHubAPI.getEvent(req.body.name, req.body.city).then(function(response){
+        res.json(response);
+    }).catch(function(err){
+        console.log(err);
+    })
+});
+
+module.exports = router;
