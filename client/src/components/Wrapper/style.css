@@ -3,10 +3,7 @@
   background: rgb(243, 243, 247);
   height: 100%;
   display: flex;
-<<<<<<< HEAD
   flex-direction: column;
-=======
->>>>>>> master
   flex-flow: row wrap;
   padding: 20px;
   justify-content: space-around;
