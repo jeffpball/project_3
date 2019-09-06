@@ -58,11 +58,11 @@ class App extends Component {
     city: "",
     stubhubTickets: [],
     ticketmasterTickets: [],
+    seatgeekTickets: []
   };
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    console.log(name, value);
     this.setState({
       [name]: value
     });
@@ -71,7 +71,6 @@ class App extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { name, city } = this.state;
-    console.log(name, city);
 
     axios.post('/api/ticketmaster/search', { name, city })
       .then((result) => {
@@ -82,6 +81,30 @@ class App extends Component {
         console.log(resultsArray);
         this.setState({
           ticketmasterTickets: resultsArray
+        })
+      });
+
+    axios.post('/api/seatgeek/search', { name, city })
+      .then((result) => {
+        //access the results here....
+        console.log(result.data);
+        const resultsArray = [];
+        resultsArray.push(result.data);
+        console.log(resultsArray);
+        this.setState({
+          seatgeekTickets: resultsArray
+        })
+      });
+
+    axios.post('/api/stubhub/search', { name, city })
+      .then((result) => {
+        //access the results here....
+        console.log(result.data);
+        const resultsArray = [];
+        resultsArray.push(result.data);
+        console.log(resultsArray);
+        this.setState({
+          stubhubTickets: resultsArray
         })
       });
 
@@ -130,6 +153,30 @@ render() {
           {this.state.ticketmasterTickets.map((ticket, index) => (
             <Card
               service="TicketMaster"
+              //image={ticket.image}
+              key={index}
+              lowPrice={ticket.eventLowPrice}
+              highPrice={ticket.eventHighPrice}
+              link={ticket.url}
+            />
+          ))}
+        </div>
+        <div>
+          {this.state.seatgeekTickets.map((ticket, index) => (
+            <Card
+              service="SeatGeek"
+              //image={ticket.image}
+              key={index}
+              lowPrice={ticket.eventLowPrice}
+              highPrice={ticket.eventHighPrice}
+              link={ticket.url}
+            />
+          ))}
+        </div>
+        <div>
+          {this.state.stubhubTickets.map((ticket, index) => (
+            <Card
+              service="StubHub"
               //image={ticket.image}
               key={index}
               lowPrice={ticket.eventLowPrice}
