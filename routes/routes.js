@@ -12,6 +12,8 @@ router.post("/ticketmaster/search", ticketmasterController.findAll);
 
 router.post("/seatgeek/search", function(req, res) {
     seatGeekAPI.getPrices(req.body.name, req.body.city).then(function(response){
+        console.log(req.body.name);
+        console.log(req.body.city);
         res.json(response);
     }).catch(function(err){
         console.log(err);
