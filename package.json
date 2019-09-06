@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "nodemon server.js",

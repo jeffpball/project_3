@@ -85,11 +85,11 @@ class App extends Component {
         })
       });
 
-    axios.post('/api/stubhub/search', { name, city })
-      .then((result) => {
-        //access the results here....
-        console.log(result)
-      });
+    // axios.post('/api/stubhub/search', { name, city })
+    //   .then((result) => {
+    //     //access the results here....
+    //     console.log(result)
+    //   });
   };
 
 
