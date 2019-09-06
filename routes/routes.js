@@ -8,9 +8,9 @@ const stubHubAPI = new StubHubAPI();
 
 const ticketmasterController = require("../controllers/ticketmasterController");
 
-router.post("/ticketmaster/search", ticketmasterController.findAll);
+router.post("/ticketmaster/search/", ticketmasterController.findAll);
 
-router.post("/seatgeek/search", function(req, res) {
+router.post("/seatgeek/search/", function(req, res) {
     seatGeekAPI.getPrices(req.body.name, req.body.city).then(function(response){
         console.log(req.body.name);
         console.log(req.body.city);
@@ -30,7 +30,7 @@ router.post("/seatgeek/search", function(req, res) {
 //     })
 // });
 
-router.post("/stubhub/search", function(req, res) {
+router.post("/stubhub/search/", function(req, res) {
     stubHubAPI.getEvent(req.body.name, req.body.city).then(function(response){
         res.json(response);
     }).catch(function(err){
