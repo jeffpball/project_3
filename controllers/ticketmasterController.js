@@ -14,6 +14,9 @@ module.exports = {
         eventInfo.eventHighPrice = events._embedded.events[0].priceRanges[0].max;
         eventInfo.venue = events._embedded.events[0]._embedded.venues[0].name;
         eventInfo.url = events._embedded.events[0].url;
+        eventInfo.date = events._embedded.events[0].dates.start.localDate;
+        eventInfo.image = events._embedded.events[0].images[1].url;
+        eventInfo.name = events._embedded.events[0].name;
         console.log("in response" , eventInfo);
         res.json(eventInfo);
     })
