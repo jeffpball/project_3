@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const key = process.env.REACT_APP_TicketMasterKey;
+// const key = process.env.REACT_APP_TicketMasterKey;
 //const key = "wotjY8jrJPSsHhtUmS3Gi1ySKBQdsG2E";
 
 class TicketMasterAPI {
@@ -8,7 +8,7 @@ class TicketMasterAPI {
     }
     getEvent(artist, city, key){
 
-        axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=${key}&city=${city}&keyword=${artist}`)
+        axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=wotjY8jrJPSsHhtUmS3Gi1ySKBQdsG2E&city=${city}&keyword=${artist}`)
 
             .then(function(response){
                 const events = response.data;

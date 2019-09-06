@@ -83,7 +83,7 @@ class SeatGeekAPI extends Scraper {
             eventPrices.eventAveragePrice = events[event].stats.average_price;
             eventPrices.eventHighPrice = events[event].stats.highest_price;
             eventPrices.url = events[event].url;
-            let eventVenue = events[event].venue.display_location;
+            let eventVenue = events[event].venue.city;
             if (eventVenue === city) return eventPrices;
         }
     }
