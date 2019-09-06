@@ -1,24 +1,24 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser')
+const morgan = require('morgan');
 // const mongoose = require('mongoose');
 const mysql = require('mysql');
 const path = require('path');
 const config = require('config');
 const routes = require('./routes');
-const Users = require('./routes/Users')
 const app = express();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3001;
 
 // Bodyparser Middleware
+app.use(morgan("default"));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extend: false }));
 
-app.use('/users', Users);
-app.use('/routes', routes);
+app.use(routes);
 
 // MySQL DB Config
 if (process.env.JAWSDB_URL) {
@@ -46,13 +46,15 @@ if (process.env.NODE_ENV === 'production') {
   app.use(cors());
   app.use(bodyParser.urlencoded({ extend: false }));
 
-  app.use('/users', Users);
-  app.use('/routes', routes);
 
 }
 
-app.get('*', (req, res) => {
+//if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+//}
+
+/* app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/build/index.html'));
-});
+}); */
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
