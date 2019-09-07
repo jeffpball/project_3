@@ -6,14 +6,14 @@ import Landing from './components/Landing'
 import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
-import Card from './components/Card'
+//import Card from './components/Card'
 import tickets from "./tickets.json"
 import Form from "./components/Form"
 import './App.css'
 import Wrapper from './components/Wrapper'
 import EventCard from './components/EventCard'
 import axios from "axios"
-// import { Button } from 'react-bootstrap'
+import TicketsCard from './components/TicketsCard'
 
 class App extends Component {
   state = {
@@ -73,7 +73,6 @@ class App extends Component {
 
   };
 
-
   render() {
     return (
       <Router>
@@ -94,6 +93,7 @@ class App extends Component {
             city={this.state.city}
           />
         </div>
+        <br></br>
         <div className="container">
           <div className="row">
             <div className="col-lg">
@@ -108,14 +108,12 @@ class App extends Component {
                   city={this.state.city}
                 />
               ))}
-
-
             </div>
           </div>
         </div>
         <br></br>
         <Wrapper>
-          <div>
+          {/* <div>
             {this.state.ticketmasterTickets.map((ticket, index) => (
               <Card
                 service="TicketMaster"
@@ -125,7 +123,6 @@ class App extends Component {
                 highPrice={ticket.eventHighPrice}
                 link={ticket.url}
               />
-
             ))}
           </div>
           <div>
@@ -151,32 +148,44 @@ class App extends Component {
                 link={ticket.url}
               />
             ))}
+          </div> */}
+          <div>
+            {this.state.ticketmasterTickets.map((ticket, index) => (
+              <TicketsCard
+                service="TicketMaster"
+                image={tickets[0].image}
+                key={index}
+                lowPrice={ticket.eventLowPrice}
+                highPrice={ticket.eventHighPrice}
+                link={ticket.url}
+              />
+            ))}
+          </div>
+          <div>
+            {this.state.stubhubTickets.map((ticket, index) => (
+              <TicketsCard
+                service="StubHub"
+                image={tickets[1].image}
+                key={index}
+                lowPrice={ticket.eventLowPrice}
+                highPrice={ticket.eventHighPrice}
+                link={ticket.url}
+              />
+            ))}
+          </div>
+          <div>
+            {this.state.seatgeekTickets.map((ticket, index) => (
+              <TicketsCard
+                service="SeatGeek"
+                image={tickets[2].image}
+                key={index}
+                lowPrice={ticket.eventLowPrice}
+                highPrice={ticket.eventHighPrice}
+                link={ticket.url}
+              />
+            ))}
           </div>
         </Wrapper>
-        {/* <div>
-            <Card
-              service={tickets[0].service}
-              image={tickets[0].image}
-              lowPrice={tickets[0].lowPrice}
-              highPrice={tickets[0].highPrice}
-              link={tickets[0].link}
-            />
-            <Card
-              service={tickets[1].service}
-              image={tickets[1].image}
-              lowPrice={tickets[1].lowPrice}
-              highPrice={tickets[1].highPrice}
-              link={tickets[1].link}
-            />
-            <Card
-              service={tickets[2].service}
-              image={tickets[2].image}
-              lowPrice={tickets[2].lowPrice}
-              highPrice={tickets[2].highPrice}
-              link={tickets[2].link}
-            />
-          </div> */}
-
 
       </Router>
 

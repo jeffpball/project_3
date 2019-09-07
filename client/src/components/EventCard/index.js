@@ -1,8 +1,5 @@
 import React from 'react'
-import './style.css'
-import CardDeck from 'react-bootstrap/CardDeck'
-import Card from 'react-bootstrap/Card'
-import Container from 'react-bootstrap/Container'
+import { Container, Card, CardDeck}  from 'react-bootstrap'
 
 function EventCard(props) {
     return (

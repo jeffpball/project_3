@@ -20,7 +20,7 @@ function Card(props) {
             <strong>High Price:</strong> {props.highPrice}
           </li>
           <li>
-            <Button variant="warning" href={props.link}>Link</Button>
+            <Button variant="warning" href={props.link}>View Tickets</Button>
           </li>
         </ul>
       </div>
