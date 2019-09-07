@@ -6,7 +6,7 @@ function TicketsCard(props) {
         <Container>
             <CardDeck>
                 <Card>
-                    <Card.Img style={{ height: '16rem', width: '30rem'}} variant="top" src={props.image} />
+                    <Card.Img style={{ height: '12.5vw', width: '25vw'}} variant="top" src={props.image} />
                     <Card.Body>
                         <Card.Title style={{ fontWeight: 'bolder' }}>{props.service}</Card.Title>
                         
