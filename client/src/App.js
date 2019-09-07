@@ -97,8 +97,19 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg">
-              <EventCard>
-              </EventCard>
+              {this.state.ticketmasterTickets.map((ticket, index) => (
+                <EventCard
+                  key={index}
+                  name={ticket.name}
+                  image={ticket.image}
+                  venue={ticket.venue}
+                  date={ticket.date}
+                  time={ticket.time}
+                  city={this.state.city}
+                />
+              ))}
+
+
             </div>
           </div>
         </div>
