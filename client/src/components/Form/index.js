@@ -1,10 +1,12 @@
 import React from 'react'
-import "./style.css";
+import "./style.css"
+import SearchIcon from '@material-ui/icons/Search'
 
 function Form({ name, city, handleInputChange, handleFormSubmit }) {
   return (
     <div className="container">
       <div className="row justify-content-center">
+        <SearchIcon style={{ height: '50px', width: '50px' }}/>
         <form className="form-inline">
           <div className="form-group-lg">
             <label htmlFor="Query">
