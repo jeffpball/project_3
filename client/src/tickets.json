@@ -22,5 +22,13 @@
     "lowPrice": "$70.00",
     "highPrice": "$120.00",
     "link": "https://seatgeek.com"
+  },
+  {
+    "id": 4,
+    "service": "VividSeats",
+    "image": "https://www.ticketnews.com/wp-content/uploads/vividseats-750x350.jpg",
+    "lowPrice": "$80.00",
+    "highPrice": "$130.00",
+    "link": "https://www.vividseats.com"
   }
 ]

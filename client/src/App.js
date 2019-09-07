@@ -21,7 +21,8 @@ class App extends Component {
     city: "",
     stubhubTickets: [],
     ticketmasterTickets: [],
-    seatgeekTickets: []
+    seatgeekTickets: [],
+    vividseatsTickets: []
   };
 
   handleInputChange = event => {
@@ -76,7 +77,6 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
           <Navbar />
           <Route exact path="/" component={Landing} />
           <div className="container">
@@ -84,7 +84,6 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
           </div>
-        </div>
         <div>
           <Form
             handleInputChange={this.handleInputChange}
@@ -184,6 +183,17 @@ class App extends Component {
                 link={ticket.url}
               />
             ))}
+          </div>
+          <div>
+          {this.state.vividseatsTickets.map((tickets) => (
+              <TicketsCard
+                service="VividSeats"
+                image={tickets[3].image}
+                lowPrice={tickets[3].eventLowPrice}
+                highPrice={tickets[3].eventHighPrice}
+                link={tickets[3].url}
+              />
+              ))}
           </div>
         </Wrapper>
 

@@ -6,26 +6,25 @@ function Form({ name, city, handleInputChange, handleFormSubmit }) {
     <div className="container">
       <div className="row justify-content-center">
         <form className="form-inline">
-          <div className="form-group">
+          <div className="form-group-lg">
             <label htmlFor="Query">
-              <strong className="strong1">Search Artist and City:</strong>
             </label>
             <input
-              className="form-control"
-              id="Title"
+              className="form-control-lg"
+              id="Artist"
               type="text"
               value={name}
-              placeholder="Post Malone"
+              placeholder="Artist"
               name="name"
               onChange={handleInputChange}
               required
             />
             <input
-              className="form-control"
-              id="Title"
+              className="form-control-lg"
+              id="City"
               type="text"
               value={city}
-              placeholder="Tacoma"
+              placeholder="City"
               name="city"
               onChange={handleInputChange}
               required

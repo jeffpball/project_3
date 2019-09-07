@@ -57,7 +57,7 @@ class Landing extends Component {
           </button>
 
           <div
-            className="collapse navbar-collapse justify-content-md-center"
+            className="collapse navbar-collapse justify-content-md-left"
             id="navbarsExample10"
           >
             <ul className="navbar-nav">
@@ -66,9 +66,15 @@ class Landing extends Component {
                   Home
               </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/" className="nav-link">
+                  About
+              </Link>
+              </li>
             </ul>
             {localStorage.usertoken ? userLink : loginRegLink}
           </div>
+          {/* <img src={require('./retro.png')} className="" alt="" style={{ height: '5rem' }}/> */}
       </nav>
         )
       }

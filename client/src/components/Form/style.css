@@ -1,5 +1,7 @@
 .row.justify-content-center {
     background-color: rgba(156, 148, 148, 0.602);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 strong.strong1 {
@@ -10,4 +12,3 @@ strong.strong1 {
 strong.strong2 {
     font-size: 20px;
 }
-
