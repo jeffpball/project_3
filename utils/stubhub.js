@@ -54,7 +54,9 @@ class StubHubAPI {
         eventInfo.eventLowPrice = eventsReal[0].ticketInfo.minListPrice;
         eventInfo.eventHighPrice = eventsReal[0].ticketInfo.maxListPrice;
         eventInfo.venue = eventsReal[0].venue.name;
-        eventInfo.url = eventsReal[0].webURI;
+        eventInfo.url = "https://www.stubhub.com/" + eventsReal[0].webURI;
+        console.log("stubhub response" , eventInfo);
+        // console.log(response.data);
         return (eventInfo);
     }
 }

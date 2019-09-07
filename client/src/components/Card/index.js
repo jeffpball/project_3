@@ -1,5 +1,6 @@
 import React from 'react'
 import "./style.css"
+import { Button } from 'react-bootstrap'
 
 function Card(props) {
   return (
@@ -22,7 +23,7 @@ function Card(props) {
           </li>
 
           <li>
-            <strong>Link:</strong> {props.link}
+            <Button variant="warning" href={props.link}>Link</Button>
           </li>
 
         </ul>
