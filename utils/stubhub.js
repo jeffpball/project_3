@@ -1,4 +1,5 @@
 const axios = require("axios");
+const numeral = require('numeral');
 const key = process.env.REACT_APP_StubHubKey;
 const config = {
     headers:{
@@ -51,8 +52,8 @@ class StubHubAPI {
             }
         }
         let eventInfo = {};
-        eventInfo.eventLowPrice = eventsReal[0].ticketInfo.minListPrice;
-        eventInfo.eventHighPrice = eventsReal[0].ticketInfo.maxListPrice;
+        eventInfo.eventLowPrice = numeral(eventsReal[0].ticketInfo.minListPrice).format('$0,0.00');
+        eventInfo.eventHighPrice = numeral(eventsReal[0].ticketInfo.maxListPrice).format('$0,0.00');
         eventInfo.venue = eventsReal[0].venue.name;
         eventInfo.url = "https://www.stubhub.com/" + eventsReal[0].webURI;
         console.log("stubhub response" , eventInfo);

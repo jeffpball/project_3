@@ -1,5 +1,6 @@
 const axios = require("axios");
 const Scraper = require("./scraper");
+const numeral = require('numeral');
 // import {Scraper} from "./scraper";
 const searchedFor = "San Francisco, CA";
 
@@ -79,9 +80,9 @@ class SeatGeekAPI extends Scraper {
         const events = await response.data.events;
         for (let event in events) {
             let eventPrices = {};
-            eventPrices.eventLowPrice = events[event].stats.lowest_sg_base_price_good_deals;
+            eventPrices.eventLowPrice = numeral(events[event].stats.lowest_sg_base_price_good_deals).format('$0,0.00');
             eventPrices.eventAveragePrice = events[event].stats.average_price;
-            eventPrices.eventHighPrice = events[event].stats.highest_price;
+            eventPrices.eventHighPrice = numeral(events[event].stats.highest_price).format('$0,0.00');
             eventPrices.url = events[event].url;
             let eventVenue = events[event].venue.city;
             if (eventVenue === city) return eventPrices;
