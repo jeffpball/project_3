@@ -11,7 +11,7 @@ import tickets from "./tickets.json"
 import Form from "./components/Form"
 import './App.css'
 import Wrapper from './components/Wrapper'
-// import EventCard from './components/EventCard'
+import EventCard from './components/EventCard'
 import axios from "axios"
 // import { Button } from 'react-bootstrap'
 
@@ -93,6 +93,14 @@ class App extends Component {
             name={this.state.name}
             city={this.state.city}
           />
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg">
+              <EventCard>
+              </EventCard>
+            </div>
+          </div>
         </div>
         <br></br>
         <Wrapper>
