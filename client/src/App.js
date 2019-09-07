@@ -9,13 +9,11 @@ import Profile from './components/Profile'
 import Card from './components/Card'
 import tickets from "./tickets.json"
 import Form from "./components/Form"
-import NameCity from "./components/NameCity"
 import './App.css'
 import Wrapper from './components/Wrapper'
 // import EventCard from './components/EventCard'
 import axios from "axios"
 // import { Button } from 'react-bootstrap'
-
 
 class App extends Component {
   state = {
@@ -73,11 +71,6 @@ class App extends Component {
         })
       });
 
-    // axios.post('/api/stubhub/search', { name, city })
-    //   .then((result) => {
-    //     //access the results here....
-    //     console.log(result)
-    //   });
   };
 
 
@@ -115,7 +108,7 @@ class App extends Component {
               />
 
             ))}
-          </div>          
+          </div>
           <div>
             {this.state.stubhubTickets.map((ticket, index) => (
               <Card
@@ -140,16 +133,8 @@ class App extends Component {
               />
             ))}
           </div>
-
-
-
-          <div>
-            <NameCity
-
-            />
-          </div>
-
-          <div>
+        </Wrapper>
+        {/* <div>
             <Card
               service={tickets[0].service}
               image={tickets[0].image}
@@ -171,9 +156,9 @@ class App extends Component {
               highPrice={tickets[2].highPrice}
               link={tickets[2].link}
             />
-          </div>
+          </div> */}
 
-        </Wrapper>
+
       </Router>
 
     )

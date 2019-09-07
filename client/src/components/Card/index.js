@@ -13,24 +13,18 @@ function Card(props) {
           <li>
             <strong>Service:</strong> {props.service}
           </li>
-
           <li>
             <strong>Low Price:</strong> {props.lowPrice}
           </li>
-
           <li>
             <strong>High Price:</strong> {props.highPrice}
           </li>
-
           <li>
             <Button variant="warning" href={props.link}>Link</Button>
           </li>
-
         </ul>
       </div>
     </div>
-
-
   );
 }
 
